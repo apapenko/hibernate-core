@@ -345,7 +345,7 @@ public final class ReflectHelper {
 	 * @throws PropertyNotFoundException Indicates we could not locate an appropriate constructor (todo : again with PropertyNotFoundException???)
 	 */
 	public static Constructor getConstructor(Class clazz, Type[] types) throws PropertyNotFoundException {
-		final Constructor[] candidates = clazz.getConstructors();
+		final Constructor[] candidates = clazz.getDeclaredConstructors();
 		for ( int i = 0; i < candidates.length; i++ ) {
 			final Constructor constructor = candidates[i];
 			final Class[] params = constructor.getParameterTypes();
